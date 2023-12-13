@@ -1,0 +1,77 @@
+:root {
+    --mercury-size: 20px;
+    --venus-size: 35px;
+    --earth-size: 40px;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#sun {
+    height: 150px;
+    width: 150px;
+    background-color: orange;
+    border-radius: 50%;
+    display: block;
+}
+
+#mercury, #venus, #earth {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    display: block;
+}
+
+#mercury {
+    height: var(--mercury-size);
+    width: var(--mercury-size);
+    background-color: rgb(187, 178, 8);
+    animation: orbitMercury 8s linear infinite
+}
+
+#venus {
+    height: var(--venus-size);
+    width: var(--venus-size);
+    background-color: rgb(20, 227, 216);
+    animation: orbitVenus 8s linear infinite
+}
+
+#earth {
+    height: var(--earth-size);
+    width: var(--earth-size);
+    background-color: green;
+    animation: orbitEarth 8s linear infinite
+}
+
+@keyframes orbitMercury {
+    from {
+        transform: rotate(0deg) translateX(100px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(100px) rotate(-360deg);
+    }
+}
+
+@keyframes orbitVenus {
+    from {
+        transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+}
+
+@keyframes orbitEarth {
+    from {
+        transform: rotate(0deg) translateX(200px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(200px) rotate(-360deg);
+    }
+}
